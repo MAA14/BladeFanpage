@@ -1,0 +1,2258 @@
+:root {
+  --font-Tilt-Prism: "Tilt Prism";
+}
+
+:root {
+  /* CSS HEX */
+  --periwinkle: #b2afd2ff;
+  --periwinkle-2: #bab6e2ff;
+  --eerie-black: #212121ff;
+  --night: #0d0f12ff;
+  --smoky-black: #0d0705ff;
+  --falu-red: #740c0dff;
+  --engineering-orange: #b9020aff;
+
+  /* CSS HSL */
+  --periwinkle: hsla(245, 28%, 75%, 1);
+  --periwinkle-2: hsla(245, 43%, 80%, 1);
+  --eerie-black: hsla(0, 0%, 13%, 1);
+  --eerie-black-07: hsla(0, 0%, 13%, 0.7);
+  --night: hsla(216, 16%, 6%, 1);
+  --night-07: hsla(216, 16%, 6%, 0.7);
+  --smoky-black: hsla(15, 44%, 4%, 1);
+  --falu-red: hsla(359, 81%, 25%, 1);
+  --falu-red-07: hsla(359, 81%, 25%, 0.7);
+  --engineering-orange: hsla(357, 98%, 37%, 1);
+  --engineering-orange-light: hsla(357, 98%, 50%, 1);
+
+  /* color set */
+  --BAColor: rgba(26, 26, 26, 1);
+  --loginSpanLines: var(--engineering-orange);
+}
+
+/* ------------------------Website */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Times New Roman", Times, serif;
+  color: var(--periwinkle-2);
+}
+
+body {
+  background-color: var(--eerie-black);
+  overflow-x: hidden;
+}
+
+.images {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Home */
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+}
+
+.navigation {
+  width: 60vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background-color: var(--night);
+}
+
+.listNavContainer {
+  position: relative;
+  width: 90%;
+  height: 15%;
+  margin-bottom: 2%;
+  cursor: pointer;
+}
+
+.listNavContainer:nth-child(2n) {
+  margin-left: 20%;
+  animation: buble2 2s ease infinite forwards;
+}
+
+@keyframes buble2 {
+  0% {
+    margin-left: 20%;
+  }
+  50% {
+    margin-left: 15%;
+  }
+  100% {
+    margin-left: 20%;
+  }
+}
+
+.listNavContainer:nth-child(2n + 1) {
+  margin-left: 15%;
+  animation: buble1 2s ease infinite forwards;
+}
+
+@keyframes buble1 {
+  0% {
+    margin-left: 15%;
+  }
+  50% {
+    margin-left: 20%;
+  }
+  100% {
+    margin-left: 15%;
+  }
+}
+
+.iconNav {
+  position: absolute;
+  left: 0;
+  background-color: var(--eerie-black);
+  border-radius: 100px;
+  width: 15%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid var(--engineering-orange);
+  box-shadow: 2px 2px 5px var(--falu-red);
+  transition: border-radius 0.5s ease-in, width 0.5s ease-in;
+  z-index: 2;
+}
+
+.iconNav h1 {
+  color: red;
+}
+
+.descNav {
+  position: absolute;
+  overflow: hidden;
+  opacity: 0;
+  left: 16%;
+  width: 0%;
+  height: auto;
+  background-color: var(--eerie-black-07);
+  border-radius: 0px 10px 10px 0px;
+  padding: 5px;
+  /* transform: translateX(-120%); */
+  transition: width 0.5s 0s ease-in, transform 0.5s 0.5s ease-in,
+    opacity 0s 0.3s ease-in;
+  z-index: 1;
+}
+
+.descNav h2 {
+  color: var(--engineering-orange);
+  font-weight: 900;
+  border-bottom: 2px solid var(--engineering-orange);
+  margin-bottom: 2px;
+  padding-bottom: 2px;
+  font-family: var(--font-Tilt-Prism);
+}
+
+.listNavContainer:hover .iconNav {
+  border-radius: 10px 0px 0px 10px;
+  width: 16%;
+}
+
+.listNavContainer:hover .descNav {
+  /* transform: translateX(0); */
+  width: 84%;
+  opacity: 1;
+}
+
+/* left Side */
+.leftSide {
+  width: 60vw;
+  height: 100vh;
+  background-image: linear-gradient(rgba(17, 17, 17, 1), rgba(26, 26, 26, 0.8)),
+    url("images/DarkBg1.jpg");
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* login Form */
+.loginContainer {
+  width: max(45%, 300px);
+  height: 65%;
+  border-radius: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  z-index: 0;
+}
+
+.loginContainer::after {
+  content: "";
+  position: absolute;
+  width: calc(100% - 5px);
+  height: calc(100% - 5px);
+  box-shadow: 1px 1px 5px var(--engineering-orange);
+  background-color: var(--eerie-black);
+  border-radius: 0px;
+  z-index: 1;
+}
+
+/* login form */
+.loginForm {
+  position: relative;
+  z-index: 3;
+  width: 90%;
+  height: 70%;
+  display: flex;
+  overflow: hidden;
+}
+
+.LGFContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  transition: right 0.5s ease;
+}
+
+.LGFContainer.login {
+  display: flex;
+  right: 0;
+}
+
+.LGFContainer.createAcc {
+  display: flex;
+  right: 100%;
+}
+
+.loginForm.createActive .login {
+  right: -100%;
+}
+
+.loginForm.createActive .createAcc {
+  right: 0;
+}
+
+.loginForm.loginActive .login {
+  right: 0%;
+}
+
+.loginForm.loginActive .createAcc {
+  right: -100%;
+}
+
+/* container span animation */
+.loginContainer span {
+  position: absolute;
+  display: block;
+}
+
+.loginContainer span:nth-child(1) {
+  top: 0;
+  left: -200%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--loginSpanLines));
+  animation: btn-anim1 1s linear infinite;
+}
+
+@keyframes btn-anim1 {
+  0% {
+    left: -100%;
+  }
+  50%,
+  100% {
+    left: 200%;
+  }
+}
+
+.loginContainer span:nth-child(2) {
+  top: -200%;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, transparent, var(--loginSpanLines));
+  animation: btn-anim2 1s linear infinite;
+  animation-delay: 0.25s;
+}
+
+@keyframes btn-anim2 {
+  0% {
+    top: -100%;
+  }
+  50%,
+  100% {
+    top: 200%;
+  }
+}
+
+.loginContainer span:nth-child(3) {
+  bottom: 0;
+  right: -200%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(270deg, transparent, var(--loginSpanLines));
+  animation: btn-anim3 1s linear infinite;
+  animation-delay: 0.5s;
+}
+
+@keyframes btn-anim3 {
+  0% {
+    right: -100%;
+  }
+  50%,
+  100% {
+    right: 200%;
+  }
+}
+
+.loginContainer span:nth-child(4) {
+  bottom: -200%;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(360deg, transparent, var(--loginSpanLines));
+  animation: btn-anim4 1s linear infinite;
+  animation-delay: 0.75s;
+}
+
+@keyframes btn-anim4 {
+  0% {
+    bottom: -100%;
+  }
+  50%,
+  100% {
+    bottom: 200%;
+  }
+}
+
+/* login icon ------------------------ */
+.loginIcon {
+  position: absolute;
+  top: -3.4vw;
+  z-index: 4;
+  width: 7vw;
+  height: 7vw;
+  transform: rotate(45deg);
+  background: linear-gradient(
+    45deg,
+    var(--engineering-orange-light),
+    var(--falu-red),
+    var(--engineering-orange)
+  );
+  background-size: 400%;
+  box-shadow: 4px 4px 5px var(--night);
+  border-radius: 0px 10px 0px 10px;
+  animation: bgAnimation 2s ease-in 0s infinite forwards;
+}
+
+@keyframes bgAnimation {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 50% 100%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+.formBox {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.formBox input {
+  margin-top: 10px;
+}
+
+.inputBox {
+  width: 100%;
+  height: 20%;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.createAccBox .inputBox {
+  height: 15%;
+}
+
+.inputBox input {
+  width: 100%;
+  height: 90%;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  border-bottom: 2px solid var(--engineering-orange);
+  font-size: max(20px, 1.2vw);
+  color: var(--periwinkle);
+}
+
+.inputBox label {
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  transition: bottom 0.5s ease;
+  font-size: max(20px, 1.2vw);
+}
+
+.inputBox input:focus ~ label,
+.inputBox input:valid ~ label {
+  color: red;
+  bottom: 50%;
+}
+
+.buttonSubmit {
+  width: 80%;
+  height: 20%;
+  background-color: var(--eerie-black);
+  border-radius: 10px 10px 50px 50px;
+  border: 1px solid var(--engineering-orange);
+  border-right: none;
+  border-left: none;
+  border-top: 2px solid var(--engineering-orange);
+  box-shadow: 0px 1px 2px var(--engineering-orange-light);
+  font-size: max(30px, 1.5vw);
+  font-weight: 900;
+  color: var(--engineering-orange-light);
+  position: absolute;
+  bottom: 15%;
+  /* overflow: hidden; */
+  z-index: 3;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+
+.buttonSubmit:hover {
+  background-color: var(--engineering-orange);
+  color: var(--night);
+  border-color: var(--night);
+  box-shadow: 0px 1px 2px var(--night);
+}
+
+.createSubmit {
+  bottom: 15%;
+}
+
+.askCreateOrLoginAcc {
+  position: absolute;
+  bottom: 0%;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 10%;
+  font-size: max(16px, 0.9vw);
+}
+
+.askCreateOrLoginAcc p a {
+  color: var(--engineering-orange-light);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.askCreateOrLoginAcc p a:hover {
+  color: var(--falu-red);
+}
+
+.loginAsk {
+  bottom: 0%;
+}
+
+/* login INfo console text */
+.consoleInfoContainer {
+  position: absolute;
+  bottom: 5%;
+  z-index: 5;
+  display: none;
+}
+
+.consoleInfoContainer p,
+.dot {
+  color: var(--periwinkle);
+  font-size: max(16px, 1vw);
+  font-family: var(--font-Tilt-Prism);
+  /* nah berubah tapi kalo gk berubah kemungkinan ada variabel yang menang jadi harus taro dibawah dia
+  dan kalo masih kalah juga kasihin ID trus kalo masih kalah juga coba cek lagi dimana salahnya
+  kalo dh gk tau lagi ywdh ganti targetnya aja */
+}
+
+.dot {
+  display: block;
+}
+
+.dot:nth-of-type(1) {
+  opacity: 0;
+  animation: opacityWords 3s ease 0s infinite forwards;
+}
+
+.dot:nth-of-type(2) {
+  opacity: 0;
+  animation: opacityWords 3s ease 0.5s infinite forwards;
+}
+
+.dot:nth-of-type(3) {
+  opacity: 0;
+  animation: opacityWords 3s ease 1s infinite forwards;
+}
+
+@keyframes opacityWords {
+  0% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.8;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* -----------------------------------RIght Side */
+.rightSide {
+  width: 40vw;
+  height: 100vh;
+  background-image: url(images/Blade\ 2.jpg);
+  background-size: cover;
+  border-left: 4px solid var(--engineering-orange);
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.textContainer {
+  position: absolute;
+  left: -46%;
+  transform: rotate(90deg);
+  width: auto;
+  height: auto;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.textContainer h2 {
+  text-align: center;
+  color: var(--engineering-orange-light);
+  font-size: max(20px, 2.5vw);
+  text-align: center;
+  letter-spacing: 4px;
+}
+
+/* Break */
+.breakSection {
+  width: 100vw;
+  height: 10px;
+  border-radius: 0px 0px 50px 50px;
+  background-color: var(--falu-red);
+}
+
+.faluRed {
+  background-color: var(--falu-red);
+}
+
+.smokyBlack {
+  background-color: var(--smoky-black);
+}
+
+.eerieBlack {
+  background-color: var(--eerie-black);
+}
+
+.night {
+  background-color: var(--night);
+}
+
+.engineeringOrange {
+  background-color: var(--engineering-orange);
+}
+
+.periwinkle {
+  background-color: var(--periwinkle);
+}
+/* -------------------------About Section */
+.aboutContainer {
+  height: auto;
+  display: block;
+  position: relative;
+}
+
+/* ----------------Information */
+.informationContainer {
+  width: 25vw;
+  margin-left: 2%;
+  margin-top: 2%;
+  margin-bottom: 1%;
+  height: auto;
+  border: 4px solid var(--falu-red);
+  border-radius: 20px;
+}
+
+.titleText {
+  width: 100%;
+  padding: 2px;
+  height: 7%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 900;
+  background-color: var(--falu-red);
+  border-bottom: 2px solid var(--falu-red);
+}
+
+.titleText h3 {
+  color: var(--periwinkle);
+  font-size: max(30px, 1.8vw);
+}
+
+.titleText:first-child {
+  border-radius: 10px 10px 0px 0px;
+}
+
+.imageContainer {
+  width: 100%;
+  height: 40%;
+  background-color: var(--night-07);
+}
+
+.imageContainer img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.informationTxtContainer {
+  width: 100%;
+  padding: 10px;
+  height: auto;
+  background-color: var(--night-07);
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid var(--engineering-orange);
+}
+
+.informationTxtContainer:last-child {
+  border-bottom: none;
+  border-radius: 0px 0px 15px 15px;
+}
+
+.category {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.category h4 {
+  font-size: max(20px, 1.2vw);
+}
+
+.value {
+  display: flex;
+  align-items: center;
+  width: 50%;
+  height: 100%;
+}
+
+.value p {
+  margin-left: 4px;
+}
+
+.value ul li,
+.value p {
+  font-size: max(15px, 1.1vw);
+}
+
+.value ul {
+  margin-left: 11%;
+}
+
+/* --------------------------Main Information */
+.aboutInformationContainer {
+  position: absolute;
+  top: 2%;
+  left: 30vw;
+  width: 65vw;
+  height: auto;
+  background-color: var(--night);
+  border-radius: 10px 20px 20px 10px;
+  box-shadow: -2px 2px 20px var(--falu-red);
+  border-left: 4px solid var(--engineering-orange);
+  border-bottom: 2px solid var(--engineering-orange);
+  border-top: 2px solid var(--engineering-orange);
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+/* main nav */
+.mainNavAbout {
+  width: 100%;
+  height: 12%;
+  display: flex;
+}
+
+.navAbout {
+  background-color: var(--eerie-black);
+  width: 15%;
+  height: 100%;
+  padding: 10px;
+  margin-left: 10px;
+  border-radius: 20px 0px 20px 0px;
+  border: 2px solid var(--falu-red-07);
+  transform: translateY(-10px);
+  transition: transform 0.5s ease, border-radius 0.5s ease,
+    border-bottom 0.5s ease;
+}
+
+.navAbout.active {
+  border-radius: 20px 20px 0px 0px;
+  border-bottom: none;
+  transform: translateY(0px);
+}
+
+.listAbout {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.listAbout h4 {
+  font-size: max(17px, 1.5vw);
+  color: var(--engineering-orange-light);
+}
+
+/* sub main nav */
+.subMainNavAbout {
+  width: 100%;
+  height: 0%;
+  display: none;
+  background-color: var(--eerie-black);
+  position: relative;
+  transition: height 1s 0.5s ease-in;
+}
+
+/* lore subNav */
+
+.subMainNavAbout.active {
+  display: flex;
+  height: 10%;
+}
+
+.subMainNavAbout::after {
+  content: "";
+  background-color: var(--engineering-orange);
+  width: 100%;
+  height: 4px;
+  position: absolute;
+  bottom: 0;
+}
+
+.listSub {
+  width: auto;
+  padding: 10px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  font-size: max(15px, 1vw);
+  background-color: var(--night-07);
+  margin-left: 1%;
+  margin-top: 5px;
+  position: relative;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.5s ease;
+}
+
+.listSub h4 {
+  transition: color 0.5s ease;
+}
+
+.listSub:hover {
+  background-color: var(--night);
+}
+
+.listSub:hover h4 {
+  color: var(--engineering-orange);
+}
+
+.listSub::after {
+  content: "";
+  width: 0%;
+  height: 6px;
+  position: absolute;
+  right: 0;
+  background-color: var(--night);
+  bottom: 0px;
+  z-index: 3;
+  transition: width 0.5s ease-in;
+}
+
+.listSub:hover::after {
+  width: 100%;
+}
+
+.listSub.active {
+  background-color: var(--night);
+}
+
+.listSub.active h4 {
+  color: var(--engineering-orange);
+}
+
+.listSub.active::after {
+  width: 100%;
+}
+
+/* Text About Main */
+.textInformationAboutContainer {
+  width: 100%;
+  height: auto;
+  padding: 10px;
+  text-align: justify;
+  display: none;
+  position: relative;
+}
+
+.textInformationAboutContainer.active {
+  display: block;
+}
+
+.textInformationAboutContainer p {
+  color: goldenrod;
+  font-size: max(17px, 1.2vw);
+}
+
+.noted p {
+  color: var(--periwinkle-2);
+  font-weight: 700;
+  font-size: 1.1vw;
+}
+
+.noted {
+  width: 36%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  background-color: var(--smoky-black);
+  border-radius: 10px 0px 10px 0px;
+  padding: 5px;
+  margin-bottom: 10px;
+  border: 2px solid var(--engineering-orange);
+}
+
+/* Quotes */
+.voiceContainerEng {
+  width: 45%;
+  height: 7vw;
+  padding: 10px;
+  display: flex;
+}
+
+.buttonPlayorPause {
+  width: 25%;
+  height: 100%;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.buttonPlayorPause img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.audioContainer {
+  width: 75%;
+  height: 100%;
+  margin-left: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--eerie-black);
+  padding: 5px;
+  border-radius: 2px 10px 10px 2px;
+  border: 2px solid var(--engineering-orange);
+  border-right: 4px solid var(--engineering-orange-light);
+}
+
+.audioContainer .audioText {
+  text-align: center;
+  font-size: 1.2vw;
+  color: var(--periwinkle);
+}
+
+/* right side voice */
+.rightNoted {
+  width: 70%;
+}
+
+.rightVoice {
+  width: 90%;
+}
+
+.rightSideVoice {
+  width: 50%;
+  height: auto;
+  position: absolute;
+  right: 2%;
+  top: 10px;
+}
+
+/* Light Cones */
+.lightConesContainer {
+  background-image: linear-gradient(rgba(17, 17, 17, 1), rgba(26, 26, 26, 0.8)),
+    url("images/DarkBg1.jpg");
+}
+
+.lightConesDesc {
+  margin-top: 2%;
+  margin-left: 2%;
+  width: 60vw;
+  height: 90vh;
+  padding: 10px;
+  position: relative;
+}
+
+.lightConesPict {
+  margin-top: 2%;
+  padding: 10px;
+  margin-left: 1%;
+  width: 30vw;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.lightCone {
+  width: 60%;
+  height: 50%;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  transform: translateX(0px);
+  transition: transform 1s 0s ease;
+}
+
+.lightCone img {
+  position: relative;
+  width: 80%;
+  height: 80%;
+  object-fit: contain;
+  animation: lightConeUpDown 2s ease-in 0s infinite forwards;
+}
+
+@keyframes lightConeUpDown {
+  0% {
+    margin-top: -10px;
+  }
+  50% {
+    margin-top: -40px;
+  }
+  100% {
+    margin-top: -10px;
+  }
+}
+
+.listLightCone {
+  width: 80%;
+  height: 20%;
+  display: flex;
+  align-items: center;
+  position: relative;
+  background-color: var(--eerie-black);
+  border-radius: 50px 0px 50px 0px;
+  border: 2px solid var(--engineering-orange);
+  border-top: none;
+  border-bottom: none;
+  box-shadow: 1px -1px 5px var(--engineering-orange-light);
+}
+
+.lightConeIcon {
+  width: 30%;
+  height: 100%;
+  filter: drop-shadow(2px 4px 2px var(--falu-red));
+  cursor: pointer;
+  position: relative;
+  transition: margin 0.3s ease-in;
+}
+
+.lightConeIcon.active {
+  filter: drop-shadow(2px 4px 2px goldenrod);
+}
+
+.lightConeIcon:hover {
+  margin-top: -15px;
+  filter: drop-shadow(2px 4px 2px var(--periwinkle-2));
+}
+
+.lightConeIcon:active {
+  margin-top: -15px;
+  filter: drop-shadow(2px 4px 2px goldenrod);
+}
+
+.lightConeIcon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.lightConeIcon:not(:first-of-type) {
+  margin-left: 10px;
+}
+
+/* btn lightcones */
+.btnLightCones {
+  background-color: var(--engineering-orange);
+  box-shadow: 1px 0px 2px var(--periwinkle-2);
+  height: 3vw;
+  width: 3vw;
+  cursor: pointer;
+  position: relative;
+  border-radius: 50px 20px 30px 50px;
+  border: none;
+  transition: margin 0.5s ease-in, box-shadow 0.5s ease, border 0.3s 0s ease;
+}
+
+.btnLightCones:last-of-type {
+  margin-left: 10px;
+  border-radius: 20px 50px 50px 30px;
+  box-shadow: -1px 0px 2px var(--periwinkle-2);
+}
+
+.btnLightCones:hover {
+  box-shadow: 0px 0px 2px var(--engineering-orange);
+  border: 1px solid var(--periwinkle);
+  border-left: none;
+}
+
+.lightConeName {
+  width: 80%;
+  height: auto;
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.lightConeName h2 {
+  font-size: 1.5vw;
+  color: goldenrod;
+}
+/* left side Light Cones Pages */
+.mainDesc {
+  width: 60%;
+  height: 50%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding: 5px;
+}
+
+.mainDesc h2 {
+  text-align: center;
+  font-size: 1.5vw;
+  color: var(--engineering-orange-light);
+  font-weight: 800;
+  width: 100%;
+  border-bottom: 4px solid var(--engineering-orange);
+  padding-bottom: 5px;
+  padding-top: 5px;
+  border-radius: 0px 0px 10px 10px;
+  box-shadow: -2px 0px 5px var(--engineering-orange-light);
+}
+
+.mainDesc p {
+  background-color: var(--eerie-black);
+  padding: 5px;
+  margin-top: 10px;
+  font-size: 1.2vw;
+  width: 100%;
+  height: 85%;
+  border: 0px solid var(--engineering-orange);
+  border-right: 1px solid var(--engineering-orange-light);
+  border-left: 4px solid var(--engineering-orange-light);
+  border-radius: 10px;
+  box-shadow: -2px 2px 10px 1px var(--engineering-orange-light);
+  text-align: justify;
+}
+
+/* stats */
+.stats {
+  width: 40%;
+  height: 50%;
+  background-color: var(--eerie-black);
+  padding: 5px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 2px 2px 5px 1px var(--periwinkle);
+}
+
+.titleTable {
+  width: 100%;
+  height: 10%;
+  background-color: var(--night);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--periwinkle);
+}
+
+.statsInfo {
+  display: flex;
+  width: 100%;
+  height: 90%;
+}
+
+.titleTable h2 {
+  color: var(--engineering-orange-light);
+  text-align: center;
+  font-size: 1.5vw;
+}
+
+.baseInfo {
+  width: 35%;
+  height: 30%;
+  border: 2px solid var(--periwinkle);
+  border-top: 0px solid var(--periwinkle);
+}
+
+.baseInfo:not(:first-of-type) {
+  border-left: none;
+}
+
+.titleInfo {
+  width: 100%;
+  height: 50%;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  background-color: var(--night);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.titleInfo h3 {
+  font-size: 1.2vw;
+  color: var(--engineering-orange);
+}
+
+.titleInfo p {
+  font-size: 0.8vw;
+  color: gold;
+}
+
+.mainInfo {
+  width: 100%;
+  height: 50%;
+  background-color: var(--eerie-black);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mainInfo h4 {
+  color: var(--engineering-orange);
+  font-size: 1.5vw;
+}
+
+/* refinement */
+.refinement {
+  width: 96%;
+  height: 50%;
+  position: absolute;
+  left: 5px;
+  bottom: 10%;
+}
+
+.refinementText {
+  width: 100%;
+  height: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  border: 2px solid var(--periwinkle);
+  background-color: var(--night);
+}
+
+.refinementText h2 {
+  font-size: 1.5vw;
+  color: var(--engineering-orange-light);
+}
+
+.refinementNum {
+  width: 100%;
+  height: 15%;
+  display: flex;
+}
+
+.RNum {
+  padding: 10px;
+  width: 20%;
+  height: 100%;
+  background-color: var(--night);
+  border: 2px solid var(--periwinkle);
+  border-top: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.RNum:hover {
+  background-color: var(--falu-red);
+}
+
+.RNum:hover h3 {
+  color: white;
+}
+
+.RNum.active {
+  background-color: var(--falu-red);
+}
+
+.RNum.active h3 {
+  color: white;
+}
+
+.RNum:not(:first-of-type) {
+  border-left: none;
+}
+
+.RNum h3 {
+  font-size: 1vw;
+  color: var(--engineering-orange);
+}
+
+.refinementDesc {
+  width: 100%;
+  height: 65%;
+  padding: 5px;
+  background-color: var(--eerie-black);
+  border: 2px solid var(--periwinkle);
+  border-top: none;
+}
+
+.refinementDesc h4 {
+  color: var(--engineering-orange);
+  text-align: center;
+  font-size: 1.2vw;
+}
+
+.refinementDesc p {
+  font-size: 0.9vw;
+}
+
+/* button Max or Low Stats */
+.buttonMaxorLowStats {
+  width: 30%;
+  height: 8%;
+  border-radius: 100px;
+  background-color: var(--night);
+  border: 2px solid var(--falu-red);
+  position: absolute;
+  bottom: 3px;
+  right: 5px;
+  display: flex;
+  z-index: 3;
+  cursor: pointer;
+}
+
+.buttonMaxorLowStats::after {
+  content: "";
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  background-color: var(--engineering-orange);
+  border-radius: 50px 0px 0px 50px;
+  z-index: 4;
+  transition: transform 0.3s ease;
+}
+
+.buttonMaxorLowStats.MaxActive::after {
+  transform: translateX(0);
+  border-radius: 50px 0px 0px 50px;
+}
+
+.buttonMaxorLowStats.LowActive::after {
+  transform: translateX(100%);
+  border-radius: 0px 50px 50px 0px;
+}
+
+.MaxLowStats {
+  position: relative;
+  z-index: 5;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.MaxLowStats h2 {
+  font-size: 1vw;
+  color: var(--night);
+  font-weight: bolder;
+}
+
+/* LC Comment COntainer */
+.lightConesCommentContainer {
+  position: absolute;
+  bottom: 2%;
+  left: 0;
+  width: 60%;
+  height: 45%;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.beforeAfterCommentBtn {
+  width: 5%;
+  height: 10%;
+  background-color: var(--engineering-orange);
+  cursor: pointer;
+  transition: border 0.5s 0s ease, box-shadow 0.5s 0s ease-in;
+}
+
+.beforeAfterCommentBtn:hover {
+  border: 1px solid var(--periwinkle);
+  box-shadow: 0px 0px 2px var(--periwinkle);
+  border-left: none;
+}
+
+.beforeCommentBtn {
+  position: absolute;
+  left: 0;
+  border-radius: 20px 5px 5px 20px;
+  box-shadow: 1px 0px 2px var(--periwinkle);
+}
+
+.afterCommentBtn {
+  position: absolute;
+  right: 0;
+  border-radius: 5px 20px 20px 5px;
+  box-shadow: -1px 0px 2px var(--periwinkle);
+}
+
+/* recomendation comment container */
+.commentRecomendationContainer {
+  position: absolute;
+  left: 7.5%;
+  width: 85%;
+  height: 65%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(to bottom, var(--night) 45%, var(--falu-red));
+}
+
+/* accesoris box comment */
+.boxAccesoris {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background-color: var(--BAColor);
+  border: 2px solid var(--periwinkle);
+  border-radius: 0px;
+}
+
+/* BA */
+.BA1 {
+  left: 0px;
+  border-left: none;
+  border-top: 2px solid var(--BAColor);
+}
+
+.BA2 {
+  right: 0;
+  border-right: none;
+  border-top: 2px solid var(--BAColor);
+}
+
+.BA3 {
+  bottom: 0;
+  left: 0;
+  border-bottom: 2px solid var(--BAColor);
+  border-left: none;
+}
+
+.BA4 {
+  bottom: 0;
+  right: 0;
+  border-right: none;
+  border-bottom: 2px solid var(--BAColor);
+}
+
+/* LBA */
+.longBoxAccesoris {
+  position: absolute;
+  width: calc(100% - 30px);
+  height: 1px;
+  background-color: var(--periwinkle);
+}
+
+.LBA1 {
+  left: 15px;
+  top: 0;
+}
+
+.LBA2 {
+  left: 15px;
+  bottom: 0;
+}
+
+.LBA3 {
+  top: 15px;
+  left: 0;
+  width: 1px;
+  height: calc(100% - 30px);
+}
+
+.LBA4 {
+  top: 15px;
+  right: 0;
+  width: 1px;
+  height: calc(100% - 30px);
+}
+
+/* user Profile */
+.userLightConesComment {
+  position: relative;
+  top: 10px;
+  width: 85%;
+  height: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.userIcon {
+  position: absolute;
+  left: 10px;
+  transform: rotate(45deg);
+  width: 15px;
+  height: 15px;
+  background-color: var(--engineering-orange-light);
+  border: 1px solid var(--periwinkle);
+}
+
+.userName {
+  position: absolute;
+  left: 35px;
+  width: calc(100% - 15px);
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.userName h2 {
+  color: var(--engineering-orange);
+  font-size: 1.1vw;
+}
+
+.userCommentText {
+  font-size: 1vw;
+  padding-left: 15px;
+  width: 85%;
+  height: 65%;
+  margin-top: 3%;
+}
+
+.afterImages {
+  transform: rotate(180deg);
+}
+
+/* about me container */
+.aboutMeContainer {
+  position: absolute;
+  right: 0%;
+  bottom: 0%;
+  width: 40%;
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.titleAboutMe {
+  width: 90%;
+  height: 90%;
+  border-radius: 10px;
+  background: linear-gradient(to top, var(--eerie-black), var(--night) 50%);
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  border-right: 1px solid var(--engineering-orange);
+  border-top: 1px solid var(--engineering-orange);
+  box-shadow: -2px 1px 5px var(--falu-red);
+}
+
+.titleAboutMeText h2 {
+  color: var(--engineering-orange-light);
+  font-size: 1.5vw;
+}
+
+.socialMedia {
+  width: 100%;
+  height: 20%;
+  display: flex;
+  align-items: center;
+  border-bottom: 2px solid var(--engineering-orange);
+  margin-bottom: 10px;
+}
+
+.SMIcon {
+  width: 30px;
+  height: 30px;
+  margin-right: 1%;
+}
+
+.SMIcon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.SMName h3 {
+  font-size: 0.9vw;
+  color: white;
+}
+
+/* Display */
+.display-none {
+  display: none;
+}
+
+/* Gameplay Page */
+.gameplay {
+  flex-direction: column;
+  height: 200vh;
+  background-color: var(--eerie-black);
+  position: relative;
+}
+
+/* even */
+.skillContainer {
+  margin-top: 5%;
+  margin-left: 5%;
+  width: 90%;
+  height: 15%;
+  background-color: var(--night);
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.skillGifContainer {
+  position: absolute;
+  left: 40px;
+  width: 20%;
+  height: 80%;
+  background-color: white;
+  box-shadow: 1px 2px 5px var(--engineering-orange);
+  z-index: 10;
+}
+
+.skillGifContainer::after {
+  content: "";
+  position: absolute;
+  background-color: var(--periwinkle);
+  right: -0.1vw;
+  height: 100%;
+  width: 4px;
+  border-radius: 10px;
+  z-index: 2;
+}
+
+.skillGifContainer::before {
+  content: "";
+  position: absolute;
+  top: 0%;
+  background-color: var(--engineering-orange);
+  right: -0.1vw;
+  height: 100%;
+  width: 4px;
+  border-radius: 10px;
+  z-index: 3;
+  animation: scaleBottom 1s ease-in infinite;
+  box-shadow: 0px 0px 4px var(--engineering-orange-light);
+  transform-origin: top;
+}
+
+@keyframes scaleBottom {
+  0% {
+    transform: scaleY(0%);
+  }
+  50% {
+    transform: scaleY(100%);
+  }
+  100% {
+    transform: scaleY(100%);
+  }
+}
+
+.skillGifContainer img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.skillDescContainer {
+  position: absolute;
+  right: 40px;
+  width: 70%;
+  height: 80%;
+  background-color: var(--eerie-black);
+  padding: 10px;
+}
+
+.skillDescContainer h2 {
+  color: var(--engineering-orange-light);
+  font-size: 1.5vw;
+  padding-bottom: 5px;
+  border-bottom: 2px solid var(--engineering-orange);
+  margin-bottom: 5px;
+}
+
+.skillDescContainer p {
+  color: var(--periwinkle);
+  font-size: 0.9vw;
+}
+
+/* accesoris skill container */
+/* box */
+.boxAccesorisSkillContainer {
+  position: absolute;
+  z-index: 5;
+  width: 20px;
+  height: 20px;
+  background-color: var(--eerie-black);
+  border: 4px solid var(--engineering-orange-light);
+}
+
+.BAS1 {
+  top: 0;
+  left: 0;
+  border-top: none;
+  border-left: none;
+}
+
+.BAS2 {
+  bottom: 0;
+  left: 0;
+  border-left: none;
+  border-bottom: none;
+}
+
+.BAS3 {
+  top: 0;
+  right: 0;
+  border-top: none;
+  border-right: none;
+}
+
+.BAS4 {
+  bottom: 0;
+  right: 0;
+  border-right: none;
+  border-bottom: none;
+}
+
+/* line */
+.lineAccesorisSkillContainer {
+  position: absolute;
+  z-index: 5;
+  background-color: var(--engineering-orange-light);
+}
+
+.LAS1 {
+  width: calc(100% - 40px);
+  height: 1px;
+  left: 20px;
+  top: 0;
+}
+
+.LAS2 {
+  width: calc(100% - 40px);
+  height: 1px;
+  left: 20px;
+  bottom: 0;
+}
+
+.LAS3 {
+  height: calc(100% - 40px);
+  width: 1px;
+  top: 20px;
+  left: 0;
+}
+
+.LAS4 {
+  height: calc(100% - 40px);
+  width: 1px;
+  top: 20px;
+  right: 0px;
+}
+
+/* odd */
+.SCodd .skillGifContainer {
+  left: calc(80% - 40px);
+}
+
+.SCodd .skillGifContainer::after {
+  left: -0.1vw;
+}
+
+.SCodd .skillGifContainer::before {
+  left: -0.1vw;
+}
+
+.SCodd .skillDescContainer {
+  left: 40px;
+}
+
+.SCeven {
+  opacity: 0;
+  transform: translateX(-100%);
+}
+
+.SCodd {
+  opacity: 0;
+  transform: translateX(100%);
+}
+
+.SCodd:last-of-type {
+  margin-bottom: 50px;
+}
+
+@keyframes FadeInRight {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  60% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+
+@keyframes FadeInLeft {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  60% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+
+/* comment container------------------------------------------------------------- */
+.BAC {
+  background-color: var(--eerie-black);
+  border-color: var(--periwinkle);
+}
+
+.mainCommentContainer .BAC {
+  background-color: var(--smoky-black);
+}
+
+.subMainCommentContainer .BAC {
+  background-color: var(--eerie-black);
+}
+
+.replyFormCommentContainer .BAC {
+  background-color: var(--eerie-black);
+}
+
+.LAC {
+  background-color: var(--periwinkle);
+}
+
+.bodyCommentContainer {
+  position: relative;
+  padding-top: 150px;
+  height: auto;
+  width: 100vw;
+  background-color: var(--smoky-black);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mainCommentContainer {
+  display: none;
+  position: relative;
+  width: min(90%, 1140px);
+  margin: 3rem auto;
+  height: auto;
+  margin-bottom: 9vw;
+  background-color: var(--eerie-black);
+}
+
+/* testing reply */
+.opened {
+  display: block;
+}
+
+.mainCommentContainer::after {
+  content: "";
+  height: 100%;
+  width: 2px;
+  background-color: var(--engineering-orange);
+  position: absolute;
+  bottom: 0;
+  left: -2%;
+}
+
+.commentContainer {
+  padding-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  min-height: 200px;
+  width: 100%;
+  background: linear-gradient(to bottom, var(--night) 45%, var(--falu-red));
+}
+
+/* Acsesoris Photo Profile (APP) */
+.APP {
+  position: absolute;
+  transform: rotate(45deg);
+  top: -1vw;
+  background-color: var(--periwinkle);
+  border: 2px solid var(--periwinkle);
+  z-index: 6;
+  width: 2vw;
+  height: 2vw;
+}
+.APP1 {
+  left: 38%;
+}
+
+.APP2 {
+  right: 38%;
+}
+
+/* Photo Profile */
+.photoProfileCommentContainer {
+  position: absolute;
+  top: -4vw;
+  transform: rotate(45deg);
+  width: 8vw;
+  height: 8vw;
+  background-color: var(--periwinkle);
+  overflow: hidden;
+  border: 2px solid var(--periwinkle);
+  z-index: 7;
+}
+.photoProfileCommentContainer .imgContainer {
+  transform: rotate(-45deg);
+  width: 130%;
+  height: 130%;
+  position: absolute;
+  top: -15%;
+  left: -15%;
+}
+/* username comment */
+.usernameCommentContainer {
+  margin-top: 6vw;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: 40%;
+  height: auto;
+  padding-bottom: 15px;
+}
+
+.usernameCommentContainer::after {
+  content: "";
+  width: 40%;
+  height: 3px;
+  border-radius: 20px 0px 20px 0px;
+  background-color: var(--engineering-orange);
+  position: absolute;
+  bottom: 25%;
+}
+
+.usernameCommentContainer h3 {
+  font-size: max(1.5vw, 15px);
+  color: var(--engineering-orange-light);
+}
+
+/* text comment */
+.textCommentContainer {
+  width: 80%;
+  height: auto;
+}
+
+.textCommentContainer p {
+  font-size: max(1vw, 12px);
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+/* footer */
+.footerComment {
+  position: absolute;
+  bottom: 10px;
+  width: 80%;
+  left: 10%;
+  display: flex;
+  justify-content: flex-end;
+  z-index: 6;
+}
+
+.footer {
+  margin-left: 3%;
+  cursor: pointer;
+}
+
+.footer h3 {
+  font-size: max(1vw, 12px);
+}
+
+.footer:hover h3 {
+  color: var(--engineering-orange);
+}
+
+/* comment form */
+.BACF {
+  background-color: var(--smoky-black);
+}
+
+.commentForm {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.textInputCommentForm {
+  width: 100%;
+  min-height: 100px;
+  background-color: var(--eerie-black);
+  margin-bottom: 10px;
+  outline: none;
+  border: 2px solid var(--periwinkle);
+}
+
+.textInputCommentForm:focus,
+.textInputCommentForm:valid {
+  border: 2px solid var(--engineering-orange);
+}
+
+.submitButtonComment {
+  width: 80px;
+  height: 40px;
+  font-size: 20px;
+  background: linear-gradient(
+    45deg,
+    var(--engineering-orange-light),
+    var(--falu-red),
+    var(--engineering-orange)
+  );
+  background-size: 400%;
+  animation: bgAnimation 2s ease-in 0s infinite;
+  outline: none;
+  border: 2px solid var(--night);
+  border-right: none;
+  border-top: none;
+  box-shadow: 1px 2px 5px 1px var(--periwinkle);
+  border-radius: 10px 0px 10px 0px;
+  cursor: pointer;
+  transition: box-shadow 0.5s ease;
+}
+
+.submitButtonComment:hover {
+  box-shadow: 1px 2px 5px 1px var(--engineering-orange);
+}
+
+/* replly */
+.replyComment {
+  margin-top: 7vw;
+  margin-top: 6rem;
+  margin-left: 3rem;
+}
+.bold {
+  color: var(--engineering-orange-light);
+}
+
+.adminUsername {
+  color: rgb(0, 238, 255);
+}
+
+/* --------------------------- Responsive ------------------------------------------ */
+/* -------------------------------------Tablet user----------------------------------- */
+@media (max-width: 820px) {
+  /* Opening Login */
+  .rightSide {
+    display: none;
+  }
+
+  .leftSide {
+    width: 100vw;
+    height: 100vh;
+  }
+
+  .loginContainer {
+    width: 50vw;
+    height: 40vh;
+    border-radius: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    z-index: 0;
+  }
+
+  .loginIcon {
+    width: 20vw;
+    height: 20vw;
+    top: -10vw;
+  }
+
+  /* ---------------About */
+  .aboutContainer {
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .informationContainer {
+    width: 85vw;
+  }
+  .aboutInformationContainer {
+    position: relative;
+    left: 0;
+    width: 85vw;
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+
+  .noted p {
+    font-size: 1.5vw;
+  }
+
+  /* Light Cones */
+  .lightConesContainer {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .lightConesDesc {
+    width: 90vw;
+    height: 90vh;
+  }
+  .lightConesDesc p {
+    font-size: 1.5vw;
+  }
+
+  .lightConesDesc h4,
+  .lightConesDesc h2,
+  .lightConesDesc h3 {
+    font-size: 2vw;
+  }
+
+  .titleAboutMe h3 {
+    font-size: 1.5vw;
+  }
+
+  .stats {
+    height: max(250px, 50%);
+  }
+
+  .lightConesPict {
+    width: 90vw;
+    margin-left: 5vw;
+    margin-top: -10%;
+  }
+
+  .lightConeName h2 {
+    font-size: 3vw;
+  }
+
+  /* skill */
+  .gameplay {
+    display: flex;
+    justify-content: center;
+  }
+
+  .skillContainer {
+    height: 90vw;
+  }
+
+  .skillGifContainer {
+    width: 40%;
+  }
+
+  .skillDescContainer {
+    width: 45%;
+  }
+
+  .skillDescContainer h2 {
+    font-size: 3vw;
+  }
+
+  .skillDescContainer p {
+    font-size: 2vw;
+  }
+
+  .SCodd .skillGifContainer {
+    left: calc(60% - 40px);
+  }
+}
+
+/* font size 12 */
+
+@media (max-width: 500px) {
+  /* Login */
+  .loginContainer {
+    width: 90vw;
+  }
+
+  /* About */
+  .listSub h4 {
+    font-size: 8px;
+  }
+
+  .noted {
+    width: 50%;
+  }
+
+  .noted p {
+    font-size: 8px;
+  }
+
+  .textInformationAboutContainer p {
+    font-size: 12px;
+  }
+
+  .lightConesContainer {
+    height: auto;
+  }
+
+  .lightConesDesc {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100vw;
+    height: auto;
+  }
+
+  .stats {
+    position: relative;
+    width: 90%;
+    height: 50vh;
+    top: 40px;
+  }
+
+  .stats h2,
+  .stats h3,
+  .stats h4 {
+    font-size: 15px;
+  }
+
+  .stats p {
+    font-size: 10px;
+  }
+
+  .mainDesc {
+    position: relative;
+    width: 90%;
+    height: auto;
+  }
+
+  .mainDesc h2 {
+    font-size: 15px;
+  }
+
+  .mainDesc p {
+    font-size: 12px;
+  }
+
+  .lightConesCommentContainer {
+    position: relative;
+    width: 90%;
+    height: 30vh;
+    bottom: -20px;
+  }
+
+  .lightConesCommentContainer p,
+  .lightConesCommentContainer h2 {
+    font-size: 10px;
+  }
+  .aboutMeContainer {
+    position: relative;
+    width: 90%;
+  }
+
+  .aboutMeContainer h3,
+  .aboutMeContainer h2 {
+    font-size: 15px;
+  }
+
+  .lightConesPict {
+    margin-top: -50%;
+  }
+
+  /* Skill */
+  .SCeven .skillGifContainer {
+    left: 20px;
+    height: 30%;
+  }
+  .SCeven .skillDescContainer {
+    right: 20px;
+  }
+  .SCodd .skillGifContainer {
+    left: calc(60% - 10px);
+    height: 30%;
+  }
+  .SCodd .skillDescContainer {
+    left: 20px;
+  }
+
+  .skillContainer h2 {
+    font-size: 12px;
+  }
+  .skillContainer p {
+    font-size: 10px;
+  }
+}
